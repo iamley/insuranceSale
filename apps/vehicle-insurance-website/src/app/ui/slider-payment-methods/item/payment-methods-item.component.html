@@ -1,0 +1,23 @@
+<div class="p-2" *ngIf="!isIconTuple else iconTuple">
+  <div class="flex-fill shadow-sm card">
+    <div class="d-flex flex-column h-100 align-items-center justify-content-center">
+      <entel-icon [icon]="icon"></entel-icon>
+      <span class="text pt-2">{{ description }}</span>
+    </div>
+  </div>
+</div>
+
+<ng-template #iconTuple>
+  <div class="p-2">
+    <div class="flex-fill shadow-sm card">
+      <div class="d-flex flex-column h-100 align-items-center justify-content-center">
+          <div class="d-flex flex-row mb-2">
+            <entel-icon class="icon-tuple" [icon]="icon"></entel-icon>
+            <span class="text-plus">+</span>
+            <entel-icon class="webpay-icon" [icon]="icon2"></entel-icon>
+          </div>
+        <span class="text pt-2">{{ description }}</span>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,23 @@
+.header {
+  padding: 1.5rem 2rem;
+
+  img {
+    width: 46px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 571px) {
+  .header {
+    padding: 1rem 0;
+
+    .logo {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .viws-form-wizard {
+    width: 100%;
+  }
+}

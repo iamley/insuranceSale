@@ -1,0 +1,35 @@
+@import "../../../../../../assets/scss/mixin";
+@import "libs/shared/core/src/lib/style/mixin";
+
+.user-validation-failure-box {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 1rem;
+  @include box-shadow;
+
+  &__content {
+    padding: 1.5rem 4rem;
+    text-align: center;
+    @include font-family-barlow(16px);
+  }
+}
+
+h2 {
+  @include font-family-barlow(24px, bold);
+}
+
+.entel-button-ws {
+  width: 60%;
+}
+
+@media screen and (max-width: 768px) {
+  .user-validation-failure-box, .entel-button-ws {
+    width: 100%;
+  }
+
+  .user-validation-failure-box {
+    &__content {
+      padding: 1rem;
+    }
+  }
+}

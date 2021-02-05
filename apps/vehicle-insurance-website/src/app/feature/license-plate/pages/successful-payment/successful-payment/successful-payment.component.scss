@@ -1,0 +1,85 @@
+@import "../../../../../../assets/scss/mixin";
+@import "libs/shared/core/src/lib/style/mixin";
+@import "libs/shared/core/src/lib/style/palette";
+
+$border-radius-16px: ($border-radius-8px * 2);
+
+.successful-payment {
+  width: 100%;
+  border-radius: $border-radius-16px;
+  @include box-shadow();
+}
+
+.successful-payment {
+  &__content {
+    padding: 1.5rem 1.8rem 0;
+  }
+
+  &__footer {
+    padding: 1rem 7rem;
+  }
+}
+
+.calypso-fringe {
+  height: 7.5rem;
+  width: 100%;
+  padding: 1.5rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: ($border-radius-8px * 2);
+  background-color: $accent-color;
+
+  span {
+    @include font-family-barlow(18px, bold);
+  }
+}
+
+.calypso-fringe {
+  &::after {
+    content: "";
+    top: 8%;
+    left: 2.5%;
+    height: 0;
+    width: 0;
+    z-index: 99;
+    position: relative;
+    border-right: solid 12px transparent;
+    border-left: solid 12px transparent;
+    border-top: solid 12px #42e8b4;
+    transform: translateX(-50%);
+  }
+}
+
+.content {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.info-text {
+  @include font-family-barlow(16px);
+}
+
+@media screen and (max-width: 768px) {
+  .successful-payment {
+    &__content {
+      padding: 1.5rem 1rem 0;
+    }
+
+    &__footer {
+      padding: 1.5rem 2rem;
+    }
+  }
+  .calypso-fringe {
+    &::after {
+      top: -7%;
+      left: 4.5%;
+    }
+  }
+  .content {
+    width: 100%;
+    margin: 1rem auto;
+  }
+}

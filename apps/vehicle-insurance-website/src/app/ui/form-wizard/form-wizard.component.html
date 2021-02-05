@@ -1,0 +1,5 @@
+<ul class="wizard">
+  <li [ngClass]="{'active': step.isActivate}" *ngFor="let step of wizardSteps$ | async">
+    <span>{{step.title}}</span>
+  </li>
+</ul>

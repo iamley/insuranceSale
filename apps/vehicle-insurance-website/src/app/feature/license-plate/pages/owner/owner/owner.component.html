@@ -1,0 +1,110 @@
+<div class="container p-0">
+  <form [formGroup]="licensePlateOwnerForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="row row-sm">
+      <div class="form-box shadow-lg card">
+        <div class="form-box__content">
+          <h2>Datos del Propietario</h2>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="field">
+                <label for="rut">Ingresa el Rut del propietario del vehículo</label>
+                <input type="text" id="rut" entelInput formControlName="key" placeholder="12345678-0" required />
+                <span class="text-error" *ngIf="!isValidField('key')">*Rut inválido</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field">
+                <label for="first_name">Nombres</label>
+                <input type="text" id="first_name" entelInput formControlName="first_name" required />
+                <span class="text-error" *ngIf="!isValidField('first_name')">*Nombres inválido</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="field">
+                <label for="first_surname">Apellido Paterno</label>
+                <input type="text" id="first_surname" entelInput formControlName="first_surname" required />
+                <span class="text-error" *ngIf="!isValidField('first_surname')">*Apellido Paterno inválido</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field">
+                <label for="second_surname">Apelllido Materno</label>
+                <input type="text" id="second_surname" entelInput formControlName="second_surname" required />
+                <span class="text-error" *ngIf="!isValidField('second_surname')">*Apellido Materno inválido</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" entelInput formControlName="email" required />
+                <span class="text-error" *ngIf="!isValidField('email')">*Email inválido</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field">
+                <label for="confirm-email">Confirmar Email</label>
+                <input type="email" id="confirm-email" (keyup)="onKeyupConfirmEmail(confirmEmail.value)"
+                       [ngClass]="{'ng-invalid' : !isValidConfirmEmail}" #confirmEmail entelInput />
+                <span class="text-error" *ngIf="!isValidConfirmEmail">*Email no coinciden</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="field">
+                <label for="phone">Teléfono</label>
+                <input id="phone" entelInput formControlName="phone" placeholder="966666666" required />
+                <span class="text-error" *ngIf="!isValidField('phone')">*Teléfono inválido</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mt-3">
+                <span>Sexo</span>
+                <div class="gender-group">
+                  <div class="gender">
+                    <input type="radio" value="M" name="gender" id="male" formControlName="gender" />
+                    <label for="male">Hombre</label>
+                  </div>
+                  <div class="gender">
+                    <input type="radio" value="F" name="gender" id="female" formControlName="gender" />
+                    <label for="female">Mujer</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="field">
+                <label for="commune">Comuna</label>
+                <input entelInput type="text" id="commune"
+                       [ngbTypeahead]="addressSearch"
+                       [inputFormatter]="addressFormatter"
+                       [resultFormatter]="addressFormatter"
+                       [editable]='false'
+                       placeholder="Comuna"
+                       formControlName="address"
+                       required
+                />
+                <span class="text-error" *ngIf="!isValidField('address')">*Ingresa una comuna</span>
+              </div>
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-sm">
+      <div class="buttons">
+        <button type="button" class="btn-2 btn-light-gray entel-button-ws" entelButton (click)="goBack()">Volver
+        </button>
+        <button type="submit" class="btn-1 entel-button-ws" entelButton [disabled]="disabledBtn">Continuar</button>
+      </div>
+    </div>
+  </form>
+</div>

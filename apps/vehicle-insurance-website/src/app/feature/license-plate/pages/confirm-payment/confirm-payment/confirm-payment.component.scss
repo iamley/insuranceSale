@@ -1,0 +1,52 @@
+@import "../../../../../../assets/scss/mixin";
+@import "libs/shared/core/src/lib/style/palette";
+@import "libs/shared/core/src/lib/style/mixin";
+
+.confirm-payment-box {
+  width: 38%;
+  margin: 0 auto;
+  padding: 1.7rem 2.5rem;
+  border-radius: 1rem;
+  @include box-shadow();
+}
+
+h2 {
+  @include font-family-barlow(28px, bold);
+}
+
+h4 {
+  color: $primary-color;
+  @include font-family-barlow(22px);
+}
+
+.icon::ng-deep {
+  img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.btn-light-gray {
+  width: 27%;
+  margin: 2rem auto;
+}
+
+@media screen and (max-width: 768px) {
+  .confirm-payment-box {
+    width: 90%;
+    padding: 1.7rem 1.5rem;
+  }
+
+  .entel-button-ws {
+    width: 100% !important;
+  }
+
+  .btn-light-gray {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .btn-light-gray {
+    width: 90%;
+  }
+}

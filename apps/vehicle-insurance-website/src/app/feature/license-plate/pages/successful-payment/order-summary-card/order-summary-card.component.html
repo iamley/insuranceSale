@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="d-flex px-3 py-2 total">
+    <span class="flex-fill">Resumen de tu compra  SOAP</span>
+    <span>{{ licensePlatePrice?.salePrice | currency : 'CLP': '$'}}</span>
+  </div>
+  <div class="card-body">
+    <h5>Vehículo</h5>
+    <div class="d-flex flex-wrap flex-wrap info-summary">
+      <ng-container *ngFor="let item of vehicleSummary">
+        <ng-template [ngTemplateOutlet]="item.vehicleSummaryTemplate ? item.vehicleSummaryTemplate : partialTemplate"></ng-template>
+      </ng-container>
+    </div>
+    <h5>Propietario</h5>
+    <div class="d-lg-flex flex-lg-row flex-sm-column flex-lg-wrap info-summary">
+      <ng-container *ngFor="let item of ownerSummary">
+        <ng-template [ngTemplateOutlet]="item.ownerSummaryTemplate ? item.ownerSummaryTemplate : partialTemplate"></ng-template>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #partialTemplate>
+  <span>Cargando...</span>
+</ng-template>

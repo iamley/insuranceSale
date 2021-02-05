@@ -1,0 +1,33 @@
+@import "libs/shared/core/src/lib/style/mixin";
+
+.item {
+  &:before {
+    content: '\2022';
+    padding-right: 0.3rem;
+    font-size: 20px;
+  }
+}
+
+.question_text {
+  @include font-family-barlow(14px, bold);
+}
+
+.answer_text {
+  padding: 0 0.8rem;
+}
+
+@media screen and (max-width: 520px) {
+  .item {
+    &:before {
+      content: none;
+    }
+
+    &__list {
+      padding-inline-start: 20px;
+      list-style: none
+    }
+  }
+  .answer_text {
+    padding: 0;
+  }
+}

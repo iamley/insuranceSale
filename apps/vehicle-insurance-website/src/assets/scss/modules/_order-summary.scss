@@ -1,0 +1,21 @@
+@import "libs/shared/core/src/lib/style/mixin";
+
+viws-vehicle-summary {
+  width: 100%;
+}
+
+.info-summary {
+  div {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+  span {
+    @include font-family-barlow(16px);
+  }
+}

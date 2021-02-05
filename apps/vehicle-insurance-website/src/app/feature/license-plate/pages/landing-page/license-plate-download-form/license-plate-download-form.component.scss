@@ -1,0 +1,84 @@
+@import "libs/shared/core/src/lib/style/mixin";
+
+$rem-2: 2rem;
+$rem-1-8: 1.8rem;
+
+$input-error-color: #E8200C;
+
+.viws-license-plate-download-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .download-license-plate-section {
+    width: 65%;
+    margin: ($rem-1-8 - 0.8);
+    padding: $rem-2 $rem-2 ($rem-2 + 1) $rem-2;
+    border-radius: 16px;
+
+    .icon {
+      padding-top: $rem-1-8;
+    }
+
+    button {
+      margin-top: $rem-1-8;
+    }
+
+    .fill {
+      flex: 0 0 45% !important;
+    }
+
+    label {
+      @include font-family-barlow(16px)
+    }
+    .entel-button-ws {
+      display: flex !important;
+      justify-content: center !important;
+    }
+  }
+}
+
+.icon-close {
+  position: absolute;
+  left: 78%;
+  top: 31%;
+}
+
+h2 {
+  @include font-family-barlow(26px, bold);
+}
+
+.message {
+  padding: 1.5rem 7rem !important;
+}
+
+input.ng-dirty.ng-invalid {
+  border-color: $input-error-color;
+  color: $input-error-color !important;
+}
+
+.text-error {
+  position: absolute;
+  top: 10rem;
+}
+
+@media screen and (max-width: 991px) {
+  .download-license-plate-section {
+    width: 100% !important;
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      padding-top: 0 !important;
+    }
+  }
+
+  .message {
+    padding: 3.5rem 1rem 2rem !important;
+  }
+
+  .icon-close {
+    top: 23%;
+    left: 81%
+  }
+}

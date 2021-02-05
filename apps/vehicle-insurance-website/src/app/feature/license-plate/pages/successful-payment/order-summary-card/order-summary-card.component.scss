@@ -1,0 +1,31 @@
+@import "libs/shared/core/src/lib/style/mixin";
+@import "libs/shared/core/src/lib/style/palette";
+
+.card {
+  border-radius: ($border-radius-8px * 2);
+
+  .card-body {
+    padding: 1rem 1.5rem 1.5rem;
+  }
+}
+
+.total {
+  color: $primary-color;
+  border-bottom: 1px solid lightgray;
+}
+.info-summary {
+  &::ng-deep {
+    div {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+h5 {
+  color: $primary-color;
+  margin-bottom: 0.6rem;
+}
+
+.total, h5 {
+  @include font-family-barlow(18px, bold);
+}

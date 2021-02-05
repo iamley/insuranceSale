@@ -1,0 +1,16 @@
+<div class="tab-group">
+  <div class="tab flex-fill px-lg-4 px-sm-2" [ngClass]="{ 'is-active': i === tab_active }" (click)="onChangeTab(i)"
+       *ngFor="let tab of _tabs; index as i">
+    <span class="text"> {{ tab.title }}</span>
+  </div>
+</div>
+
+<div class="d-flex mt-3">
+  <ng-container *ngFor="let tab of _tabs">
+    <ng-template [ngTemplateOutlet]="tab.innerTemplate ? tab.innerTemplate : partialTemplate"></ng-template>
+  </ng-container>
+</div>
+
+<ng-template #partialTemplate>
+  <span>...</span>
+</ng-template>

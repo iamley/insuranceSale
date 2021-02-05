@@ -1,0 +1,38 @@
+<div class="order-summary">
+  <div class="order-summary__content">
+    <h2>Confirmar tu solicitud</h2>
+    <h5>Vehículo</h5>
+    <div class="d-flex flex-wrap flex-wrap info-summary">
+      <ng-container *ngFor="let item of vehicleSummary">
+        <ng-template
+          [ngTemplateOutlet]="item.vehicleSummaryTemplate ? item.vehicleSummaryTemplate : partialTemplate"></ng-template>
+      </ng-container>
+    </div>
+    <h5>Propietario</h5>
+    <div class="d-lg-flex flex-lg-row flex-sm-column flex-lg-wrap info-summary">
+      <ng-container *ngFor="let item of ownerSummary">
+        <ng-template
+          [ngTemplateOutlet]="item.ownerSummaryTemplate ? item.ownerSummaryTemplate : partialTemplate"></ng-template>
+      </ng-container>
+    </div>
+    <div class="d-flex my-2">
+      <div [ngClass]="{'flex-fill': hasOfferPrice, 'flex-fill-70': !hasOfferPrice}">
+        <span class="total-text">Total a pagar</span>
+      </div>
+      <div class="flex-fill-15" *ngIf="hasOfferPrice">
+        <span class="text-light-gray">{{licensePlateTotal?.offerPrice | currency : 'CLP' : '$'}}</span>
+        <div class="strikethrough">
+          <div class="strikethrough_1"></div>
+          <div class="strikethrough_2"></div>
+        </div>
+      </div>
+      <div [ngClass]="{'flex-fill-15': hasOfferPrice, 'flex-fill-30': !hasOfferPrice}">
+        <span class="total-text">{{licensePlateTotal?.salePrice | currency : 'CLP' : '$'}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #partialTemplate>
+  <span>Cargando...</span>
+</ng-template>

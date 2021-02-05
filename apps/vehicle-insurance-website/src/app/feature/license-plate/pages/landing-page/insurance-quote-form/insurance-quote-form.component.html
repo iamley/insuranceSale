@@ -1,0 +1,23 @@
+<form [formGroup]="insuranceQuoteForm" (ngSubmit)="onSubmit()" autocomplete="off" id="insurance-quote-form" class="card">
+  <div class="card-body">
+    <div class="card-title">
+      <h5>Cotiza tu SOAP 2021</h5>
+    </div>
+    <div class="card-content">
+      <label for="licensePlate">Tu Patente</label>
+      <input class="text-uppercase"
+             name="licensePlate"
+             id="licensePlate"
+             entelInput
+             formControlName="licensePlate"
+             placeholder="BMW020"
+             required
+      />
+      <span class="text-error" *ngIf="isLicensePlateValid">*La patente ingresada no es válida</span>
+    </div>
+    <button type="submit" [disabled]="insuranceQuoteForm.invalid"  entelButton color="warn" class="mt-5 entel-button-ws">
+      Cotizar
+     <!--  <entel-icon *ngIf="!(loading$ | async)" icon="loading"></entel-icon> -->
+    </button>
+  </div>
+</form>

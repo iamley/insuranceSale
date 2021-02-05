@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="confirm-payment-box">
+      <h2 class="text-center">Pago en boleta Entel</h2>
+      <h4 class="text-center">Estás a un paso de finalizar</h4>
+      <div class="d-flex py-3">
+        <entel-icon class="icon" icon="bill"></entel-icon>
+        <div class="d-flex flex-column pl-3">
+          <span>Confirma la compra de tu</span>
+          <span>SOAP por <strong>{{(licensePlatePrice$ | async)?.salePrice | currency: 'CLP' : '$' }} IVA inc.</strong></span>
+        </div>
+      </div>
+      <div class="info-card my-4">
+        <div class="info-card__content p-lg-4 py-sm-2">
+          <p class="m-0">
+            <strong>Importante:</strong>
+            Al continuar con la compra estarás aceptando el cobro de la prima de tu
+            SOAP a través de tu
+            boleta Entel.
+          </p>
+        </div>
+      </div>
+      <div class="w-100 px-lg-3 px-sm-0">
+        <button entelButton class="entel-button-ws" color="warn" (click)="onSubmit()">Suscribir pago en boleta Entel</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <button entelButton class="entel-button-ws btn-light-gray" (click)="goBack()">Volver</button>
+  </div>
+</div>

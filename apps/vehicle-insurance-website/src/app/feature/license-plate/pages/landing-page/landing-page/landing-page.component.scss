@@ -1,0 +1,38 @@
+@import "libs/shared/core/src/lib/style/palette";
+@import "libs/shared/core/src/lib/style/mixin";
+
+$border-radius: 20px !default;
+$font-size: 16px !default;
+
+.main-banner {
+  img {
+    border-radius: $border-radius;
+  }
+}
+.tab-group-height {
+  height: 20rem;
+}
+
+.text-content {
+  @include font-family-barlow($font-size, 300)
+}
+
+.sub-title {
+  @include font-family-barlow(($font-size + 8), bold)
+}
+
+.center {
+  margin: 2rem auto 1rem auto;
+}
+
+@media screen and (max-width: 320px){
+  .tab-group-height {
+    height: 22rem;
+  }
+}
+
+@media screen and (min-width: 720px){
+  .tab-group-height {
+    height: 17rem;
+  }
+}

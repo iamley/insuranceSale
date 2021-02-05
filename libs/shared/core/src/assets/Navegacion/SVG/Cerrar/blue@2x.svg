@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Icon/Navegacion/48px/Cerrar/blue@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M24.1423305,20.7101787 L43.7907046,1.06180459 C44.70327,0.149239178 46.182831,0.149239178 47.0953962,1.06180459 C48.0079617,1.97437001 48.0079617,3.45393088 47.0953962,4.36649629 L27.4470221,24.0148703 L47.0953962,43.6632444 C48.0079617,44.5758098 48.0079617,46.0553708 47.0953962,46.967936 C46.182831,47.8805016 44.70327,47.8805016 43.7907046,46.967936 L24.1423305,27.319562 L4.49395647,46.967936 C3.58139105,47.8805016 2.10183018,47.8805016 1.18926477,46.967936 C0.276699355,46.0553708 0.276699355,44.5758098 1.18926477,43.6632444 L20.8376389,24.0148703 L1.18926477,4.36649629 C0.276699355,3.45393088 0.276699355,1.97437001 1.18926477,1.06180459 C2.10183018,0.149239178 3.58139105,0.149239178 4.49395647,1.06180459 L24.1423305,20.7101787 Z" id="path-1"></path>
+    </defs>
+    <g id="Icon/Navegacion/48px/Cerrar/blue" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Combined-Shape"></g>
+        <rect id="🎨-color" fill="#002EFF" mask="url(#mask-2)" x="0" y="0" width="48" height="48"></rect>
+    </g>
+</svg>

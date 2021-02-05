@@ -1,0 +1,5 @@
+<div class="mb-1 item">
+  <span class="question_text">{{frequentlyQuestion.question}}</span>
+  <div class="answer_text" *ngIf="frequentlyQuestion.answerTemplate"
+       [innerHTML]="frequentlyQuestion.answerTemplate | entelSafeHtml"></div>
+</div>

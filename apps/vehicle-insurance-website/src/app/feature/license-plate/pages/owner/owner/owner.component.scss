@@ -1,0 +1,57 @@
+@import "libs/shared/core/src/lib/style/mixin";
+
+$input-error-color: #E8200C;
+
+.gender-group {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-direction: row;
+
+  .gender {
+    padding-right: 1rem;
+
+    label {
+      padding-left: 0.5rem;
+      @include font-family-barlow(18px)
+    }
+  }
+}
+
+h2 {
+  @include font-family-barlow(26px, bold)
+}
+
+input.ng-invalid, select.ng-invalid, #confirm-email.ng-invalid {
+  border-color: map-get($entel-orange-warn, 500);
+}
+input.ng-invalid, #confirm-email.ng-invalid {
+  color: map-get($entel-orange-warn, 500) !important;
+}
+
+.text-error {
+  position: absolute;
+  top: 5.5rem;
+  color: $input-error-color !important;
+}
+
+.entel-button-ws[disabled] {
+  background-color: #F2F2F2;
+  color: #636467;
+}
+
+:host {
+  ::ng-deep {
+    .dropdown-menu {
+      max-height: 200px !important;
+      width: 93% !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .row-sm {
+    margin: 0 0.5rem;
+  }
+}

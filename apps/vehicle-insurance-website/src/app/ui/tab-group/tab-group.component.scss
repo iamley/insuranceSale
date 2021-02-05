@@ -1,0 +1,125 @@
+@import "libs/shared/core/src/lib/style/palette";
+@import "libs/shared/core/src/lib/style/mixin";
+
+$one-rem: 1rem;
+$border-radius-50px: 50px;
+$primary: map-get($entel-blue-primary, 500);
+
+.tab-group {
+  width: 42%;
+  display: flex;
+  margin: 0 auto;
+  border-radius: $border-radius-50px;
+
+  .tab {
+    padding-top: ($one-rem - 0.2);
+    padding-bottom: ($one-rem - 0.2);
+    border: 1px solid lightgray;
+    @include cursor-pointer;
+    @include font-family-barlow(14px);
+  }
+
+  .text {
+    position: relative;
+    left: 7px;
+  }
+
+  :first-child {
+    border-top-left-radius: $border-radius-50px;
+    border-bottom-left-radius: $border-radius-50px;
+    border-right: none;
+  }
+
+  :last-child {
+    border-top-right-radius: $border-radius-50px;
+    border-bottom-right-radius: $border-radius-50px;
+    border-left: none;
+  }
+
+  .is-active {
+    color: white;
+    background-color: $primary;
+
+    .text {
+      position: relative;
+      left: 22px;
+    }
+  }
+
+  .is-active:after {
+    content: "";
+    top: 203%;
+    left: -24%;
+    height: 0;
+    width: 0;
+    z-index: 99;
+    position: relative;
+    border-right: solid 10px transparent;
+    border-left: solid 10px transparent;
+    border-top: solid 10px $primary;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .tab-group {
+    width: 100%;
+
+    .tab {
+      padding: $one-rem;
+    }
+
+    .text {
+      position: relative;
+      left: 2px !important;
+    }
+
+    .is-active {
+      padding: $one-rem;
+
+      .text {
+        left: 14px !important;
+      }
+
+      &:after {
+        top: 83% !important;
+        left: -32%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .tab-group {
+
+    .tab {
+      padding: $one-rem ($one-rem - 0.5);
+    }
+
+    .is-active {
+      padding: $one-rem ($one-rem - 0.5);
+
+      &:after {
+        top: 210% !important;
+        left: -33%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .tab-group {
+
+    .tab {
+      padding: $one-rem 0;
+    }
+
+    .is-active {
+      padding: $one-rem 0;
+
+      &:after {
+        left: -33%;
+      }
+    }
+  }
+}

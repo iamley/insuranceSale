@@ -1,0 +1,41 @@
+<form [formGroup]="licensePlateDownloadForm" autocomplete="off" *ngIf="!(error$ | async) else messageTmpl"
+      class="download-license-plate-section d-lg-flex flex-lg-row flex-sm-column align-items-center shadow-lg">
+  <div class="icon">
+    <entel-icon [icon]="'contract'"></entel-icon>
+  </div>
+
+  <div class="mx-lg-3 mx-sm-0 fill d-flex flex-column">
+    <label for="download-license-plate">Tu patente</label>
+    <input id="download-license-plate"
+           class="text-uppercase"
+           formControlName="licensePlate"
+           entelInput
+           placeholder="BMW020"
+           required
+    />
+    <span class="text-error" *ngIf="isLicensePlateValid">*La patente ingresada no es válida</span>
+  </div>
+
+  <div class="flex-fill">
+    <button (click)="downloadPdfInsurancePolicy()"
+            [disabled]="licensePlateDownloadForm.invalid"
+            entelButton class="entel-button-ws"
+            color="warn"
+    >
+      <span *ngIf="!(loaded$ | async) else loadedTmpl">Descargar póliza</span>
+    </button>
+  </div>
+</form>
+
+<ng-template #loadedTmpl>
+  <div class="loader"></div>
+</ng-template>
+
+<ng-template #messageTmpl>
+  <div class="message download-license-plate-section shadow-lg">
+    <h2 class="text-center">No existe póliza</h2>
+    <entel-icon class="icon-close" [icon]="'close'" (click)="close()"></entel-icon>
+    <p class="text-center">La patente ingresada no registra una compra a través de nuestro portal.
+      Si no es así, escríbenos al correo <a href="mailto:contacto_seguros@entel.cl">contacto_seguros@entel.cl</a></p>
+  </div>
+</ng-template>

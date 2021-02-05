@@ -1,0 +1,66 @@
+@import "libs/shared/core/src/lib/style/palette";
+@import "libs/shared/core/src/lib/style/mixin";
+
+$span-color: #434343;
+$line-color: #CCCCCC;
+$primary-color: map-get($entel-blue-primary, 500);
+
+
+.viws-form-wizard {
+  width: 60%;
+}
+
+ul.wizard,
+ul.wizard li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+}
+
+ul.wizard li {
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+ul.wizard li::before {
+  content: '';
+  width: 11px;
+  height: 11px;
+  text-align: center;
+  line-height: 1.5em;
+  border-radius: 50%;
+  background: #c1c1c1;
+  cursor: pointer;
+}
+
+/* Linea */
+
+ul.wizard li ~ li::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  right: 50%;
+  height: 1px;
+  top: 0.34rem;
+  z-index: -1;
+  background-color: $line-color;
+}
+
+ul.wizard li.active::before {
+  background: $primary-color;
+}
+
+ul.wizard li.active {
+  span {
+    color: $primary-color;
+    @include font-family-barlow(14px, 600);
+  }
+}
+
+ul.wizard span {
+  color: $span-color;
+  word-break: break-all;
+  @include font-family-barlow(14px);
+}

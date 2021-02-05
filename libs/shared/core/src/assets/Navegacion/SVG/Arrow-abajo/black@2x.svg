@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Icon/Navegacion/48px/Arrow-abajo/black@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M25.824796,46.2183415 C25.3943088,46.6488011 24.7996127,46.9150432 24.1427324,46.9150432 C23.4858522,46.9150432 22.8911561,46.6488011 22.4606689,46.2183415 L4.72719116,28.4848638 C3.79818313,27.5558558 3.79818313,26.0496361 4.72719116,25.1206281 C5.6561992,24.1916201 7.16241882,24.1916201 8.09142686,25.1206281 L21.7638586,38.7930598 L21.7638586,2.72421712 C21.7638586,1.41040136 22.8289167,0.345343243 24.1427324,0.345343243 C25.4565482,0.345343243 26.5216063,1.41040136 26.5216063,2.72421712 L26.5216063,38.7930598 L40.194038,25.1206281 C41.123046,24.1916201 42.6292657,24.1916201 43.5582737,25.1206281 C44.4872817,26.0496361 44.4872817,27.5558558 43.5582737,28.4848638 L25.8247961,46.2183416 Z" id="path-1"></path>
+    </defs>
+    <g id="Icon/Navegacion/48px/Arrow-abajo/black" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Combined-Shape"></g>
+        <rect id="🎨-color" fill="#191919" mask="url(#mask-2)" x="0" y="0" width="48" height="48"></rect>
+    </g>
+</svg>

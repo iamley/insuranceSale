@@ -1,0 +1,22 @@
+<ng-template #vehicleSummaryTemplate>
+  <div class="flex-fill-70">
+    <span class="title">Patente</span>
+    <span>{{vehicle?.key}}</span>
+  </div>
+  <div class="flex-fill-30">
+    <span class="title">Año</span>
+    <span>{{vehicle?.year?.year}}</span>
+  </div>
+  <div class="flex-fill-70">
+    <span class="title">Marca</span>
+    <span>{{vehicle?.make?.name}}</span>
+  </div>
+  <div [class]="flexFillClass$ | async">
+    <span class="title">Model</span>
+    <span>{{vehicle?.model?.name}}</span>
+  </div>
+  <div class="flex-fill">
+    <span class="title">Tipo de vehículo</span>
+    <span>{{vehicle?.type?.type}}</span>
+  </div>
+</ng-template>

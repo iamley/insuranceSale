@@ -1,0 +1,44 @@
+@import "palette";
+
+$button-height: 40px;
+$button-with: 100%;
+
+$button-padding: .375rem .75rem;
+$border-radius-8px: 8px;
+
+@mixin cursor-pointer() {
+  cursor: pointer;
+}
+
+@mixin font-family-barlow($font-size: 15px, $font-weight: normal) {
+  font-family: 'Barlow', sans-serif;
+  font-style: normal;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+@mixin entel-button-base($font-size-base: 15px, $font-weight-base: 100) {
+  @include font-family-barlow($font-size-base, $font-weight-base);
+
+  height: $button-height;
+  width: $button-with;
+  color: $white-color;
+  padding: $button-padding;
+  text-align: center;
+  text-decoration: none !important;
+  display: inline-block;
+  outline: none !important;
+  border: none;
+  border-radius: $border-radius-8px;
+
+/*
+  &:disabled {
+    color: $gray-color;
+    background-color: $disabled-color;
+  }
+ */
+
+  &:not(:disabled) {
+    @include cursor-pointer;
+  }
+}

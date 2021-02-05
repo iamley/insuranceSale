@@ -1,0 +1,62 @@
+<div class="payment-methods">
+  <div class="payment-methods__content">
+
+    <div class="own-payment-methods">
+      <h2>Elige y paga como tú quieras</h2>
+      <div class="payment-methods__item card mt-3">
+        <div class="payment-methods__item__content">
+          <label class="px-3" for="entel-points">
+            <input (change)="onChange('entel-points')" type="radio" name="paymentMethod" id="entel-points" />
+          </label>
+          <entel-icon icon="benefit"></entel-icon>
+          <span class="px-3">Pago con <strong>puntos Entel</strong></span>
+        </div>
+      </div>
+      <div class="payment-methods__item card mt-3">
+        <div class="payment-methods__item__content">
+          <label class="px-3" for="entel-ticket">
+            <input (change)="onChange('entel-ticket')" type="radio" name="paymentMethod" id="entel-ticket" />
+          </label>
+          <entel-icon icon="ticket"></entel-icon>
+          <span class="px-3">Pago con <strong>boleta Entel</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dropdown-divider"></div>
+
+    <div class="payment-methods-externals">
+      <div class="payment-methods__item card mt-2">
+        <div class="payment-methods__item__content">
+          <label class="px-3" for="one-pay">
+            <input (change)="onChange('web-pay/one-pay')" type="radio" name="paymentMethod" id="one-pay" />
+          </label>
+          <div class="w-100 d-flex justify-content-around">
+            <entel-icon class="webpay-icon" icon="webpay-black-yellow"></entel-icon>
+            <div class="divider"></div>
+            <entel-icon icon="one-pay"></entel-icon>
+          </div>
+        </div>
+      </div>
+      <div class="payment-methods__item card mt-3">
+        <div class="payment-methods__item__content">
+          <label class="px-3" for="entel-visa">
+            <input type="radio" (change)="onChange('entel-visa')" name="paymentMethod" id="entel-visa" />
+          </label>
+          <entel-icon class="pl-3" icon="entel-visa"></entel-icon>
+          <strong class="px-3">Entel Visa</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card__content mt-3">
+        <div class="">
+          <entel-icon class="locked-icon pr-2" icon="locked"></entel-icon>
+          <span>Serás redirigido a un  sitio seguro</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

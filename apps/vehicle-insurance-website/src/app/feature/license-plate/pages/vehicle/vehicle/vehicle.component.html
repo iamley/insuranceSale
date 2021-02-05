@@ -1,0 +1,73 @@
+<div class="container">
+  <form [formGroup]="licensePlateVehicleForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="row row-sm">
+      <div class="form-box shadow-lg card">
+        <div class="form-box__content">
+          <h2>Datos del Vehículo</h2>
+          <div class="row">
+            <div class="col">
+              <div class="field">
+                <label for="license-plate">Patente</label>
+                <input type="text" id="license-plate" entelInput formControlName="key" required readonly />
+              </div>
+            </div>
+            <div class="col">
+              <div class="field" formGroupName="year">
+                <label for="year">Año</label>
+                <select (change)="onChangeYear()" id="year" entelInput formControlName="id" required>
+                  <option value="" disabled selected>Seleccione un año</option>
+                  <option [ngValue]="item.id" *ngFor="let item of modelYearsVehicle$ | async">{{ item.year }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="field" formGroupName="make">
+                <label for="make">Marca</label>
+                <select (change)="onLoadModelVehiclesByTypeVehicle(); onChangeMakeVehicle()" id="make" entelInput formControlName="id" required>
+                  <option value="" disabled selected>Seleccione una marca</option>
+                  <option [ngValue]="make.id" *ngFor="let make of makeVehicles$ | async">{{ make.name }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col">
+              <div class="field" formGroupName="model">
+                <label for="model">Modelo</label>
+                <select id="model" (change)="onChangeModelVehicle()" entelInput formControlName="id" required>
+                  <option value="" disabled selected>Seleccione un modelo</option>
+                  <option [ngValue]="model.id" *ngFor="let model of modelVehicles$ | async">{{model.name}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="field" formGroupName="type">
+                <label for="type-vehicle">Tipo de vehículo</label>
+                <select (change)="onLoadMakeVehiclesByTypeVehicle(); onChangeTypeVehicle()" id="type-vehicle" entelInput formControlName="id" required>
+                  <option value="" disabled selected>Seleccione un tipo</option>
+                  <option [ngValue]="type.id" *ngFor="let type of typeVehicles$ | async">{{ type.type }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col">
+              <div class="field">
+                <label for="engine-number">Nº de motor</label>
+                <input id="engine-number" entelInput formControlName="engine_number" required />
+                <span *ngIf="licensePlateVehicleForm.get('engine_number').invalid" class="text-error">*Ingrese Nº de motor</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-sm">
+      <div class="buttons">
+        <button type="button" (click)="goBack()" class="btn-2 btn-light-gray entel-button-ws" entelButton>Volver
+        </button>
+        <button [disabled]="licensePlateVehicleForm.invalid" type="submit" class="btn-1 entel-button-ws" entelButton>Continuar</button>
+      </div>
+    </div>
+  </form>
+</div>

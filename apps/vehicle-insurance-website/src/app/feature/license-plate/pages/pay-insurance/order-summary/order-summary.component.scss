@@ -1,0 +1,65 @@
+@import "../../../../../../assets/scss/mixin";
+@import "libs/shared/core/src/lib/style/mixin";
+@import "libs/shared/core/src/lib/style/palette";
+
+.order-summary {
+  width: 100%;
+  border-radius: 16px;
+  @include box-shadow();
+
+  &__content {
+    padding: 1.8rem 1rem 1.8rem 4rem;
+  }
+}
+
+h2 {
+  margin-bottom: 1rem;
+  @include font-family-barlow(28px, bold);
+}
+
+h5 {
+  color: $primary-color;
+  @include font-family-barlow(18px, bold);
+}
+
+.total-text {
+  color: $secondary-color;
+}
+
+.text-light-gray {
+  color: #CCCCCC;
+}
+
+.total-text, .text-light-gray {
+  @include font-family-barlow(18px, bold);
+}
+
+.strikethrough {
+  position: relative;
+  top: -43%;
+
+  &_1, &_2 {
+    width: 61.47px;
+    height: 1px;
+    background: #C4C4C4;
+  }
+
+  &_1 {
+    transform: matrix(0.92, -0.37, 0.41, 0.93, 0, 0);
+  }
+
+  &_2 {
+    transform: matrix(0.92, 0.37, -0.41, 0.93, 0, 0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .order-summary {
+    &__content {
+      padding: 1rem;
+    }
+  }
+  h2 {
+    @include font-family-barlow(24px, bold);
+  }
+}

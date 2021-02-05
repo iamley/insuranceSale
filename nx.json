@@ -1,0 +1,51 @@
+{
+  "npmScope": "mfe-vehicle-insurance",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "vehicle-insurance-website": {
+      "tags": ["scope:client"]
+    },
+    "vehicle-insurance-website-e2e": {
+      "tags": [],
+      "implicitDependencies": ["vehicle-insurance-website"]
+    },
+    "shared-environments": {
+      "tags": ["scope:shared", "type:environments"]
+    },
+    "shared-models": {
+      "tags": ["scope:shared"]
+    },
+    "shared-services": {
+      "tags": ["scope:shared"]
+    },
+    "shared-core": {
+      "tags": ["scope:shared"]
+    },
+    "ui": {
+      "tags": ["scope:shared"]
+    },
+    "utils": {
+      "tags": ["scope:utils"]
+    }
+  }
+}

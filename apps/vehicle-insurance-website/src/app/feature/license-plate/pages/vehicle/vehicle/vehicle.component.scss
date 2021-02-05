@@ -1,0 +1,31 @@
+@import "libs/shared/core/src/lib/style/mixin";
+
+$input-error-color: #E8200C;
+
+input.ng-invalid, select.ng-invalid {
+  border-color: $input-error-color;
+}
+
+input.ng-invalid {
+  color: $input-error-color !important;
+}
+
+.text-error {
+  position: initial;
+  top: 16.5rem;
+}
+
+h2 {
+  @include font-family-barlow(26px, bold)
+}
+
+.entel-button-ws[disabled] {
+  background-color: #F2F2F2;
+  color: #636467;
+}
+
+@media screen and (max-width: 768px) {
+  .row-sm {
+    margin: 0 0.5rem;
+  }
+}

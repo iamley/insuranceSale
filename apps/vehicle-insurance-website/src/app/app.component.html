@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="header">
+    <div class="d-sm-flex flex-lg-row flex-sm-column flex-md-column align-items-center">
+      <div class="logo">
+        <img src="assets/images/entel-logo.svg" alt="logo">
+        <a class="pl-4" href="#">Volver al portal de seguros</a>
+      </div>
+      <div class="mt-3 viws-form-wizard">
+        <viws-form-wizard></viws-form-wizard>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet (activate)="onActivate($event)"></router-outlet>

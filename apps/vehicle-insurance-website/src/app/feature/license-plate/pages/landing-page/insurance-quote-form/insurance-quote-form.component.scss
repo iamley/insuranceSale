@@ -1,0 +1,31 @@
+@import "libs/shared/core/src/lib/style/mixin";
+
+$input-error-color: #E8200C;
+
+#insurance-quote-form {
+  height: 100%;
+  padding: 1rem;
+  border-radius: 20px;
+
+  @include font-family-barlow(16px, normal);
+
+  h5 {
+    @include font-family-barlow(26px, bold)
+  }
+
+  .card-content {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+input.ng-dirty.ng-invalid {
+  border-color: $input-error-color;
+  color: $input-error-color !important;
+}
+
+.text-error {
+  position: absolute;
+  top: 11rem;
+}

@@ -1,0 +1,43 @@
+<div class="container p-0">
+  <div class="row content">
+    <div class="col-lg-7 mb-4">
+      <div class="successful-payment">
+        <div class="calypso-fringe">
+          <img src="assets/images/checkout-success.svg" alt="checkout-success">
+          <span class="p-2">La compra de tu SOAP 2021 se realizó con éxito.</span>
+        </div>
+
+        <div class="successful-payment__content">
+          <div class="d-flex justify-content-center info-text">
+            <span class="pb-3">El valor del SOAP ha sido cargado a tu próximo estado de cuenta Entel.
+              Hemos enviado el SOAP a tu correo <strong>{{(licensePlateOwner$ | async)?.email}}</strong>
+            </span>
+          </div>
+
+          <viws-order-summary-card [licensePlatePrice]="licensePlatePrice$ | async">
+            <viws-vehicle-summary [vehicle]="licensePlateVehicle$ | async"></viws-vehicle-summary>
+            <viws-owner-summary [owner]="licensePlateOwner$ | async"></viws-owner-summary>
+          </viws-order-summary-card>
+        </div>
+
+        <div class="successful-payment__footer">
+          <button entelButton
+                  class="entel-button-ws"
+                  color="primary"
+                  (click)="downloadPdfInsurancePolicy()"
+          >
+            Descargar póliza
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <viws-cross-selling-card></viws-cross-selling-card>
+      <div class="mx-5 mt-4">
+        <button class="d-inline-block text-center text-decoration-none entel-button-secondary primary" (click)="goLandingPage()">
+          Comprar otro SOAP
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

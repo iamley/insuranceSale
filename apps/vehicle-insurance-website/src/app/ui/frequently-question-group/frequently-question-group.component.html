@@ -1,0 +1,11 @@
+<div class="frequently-questions card flex-row"
+     [ngClass]="{'frequently-questions--open': isOpen}"
+     (click)="panelToggle()">
+  <h5 class="card-title flex-fill">Preguntas frecuentes</h5>
+  <entel-icon class="arrow-down-icon"
+              [icon]="!isOpen ? 'arrow_down' : 'arrow_up'"></entel-icon>
+</div>
+
+<div class="frequently-questions__content" *ngIf="isOpen">
+  <ng-content select="viws-frequently-question"></ng-content>
+</div>

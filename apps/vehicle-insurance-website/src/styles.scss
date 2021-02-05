@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "libs/shared/core/src/lib/style/main";
+@import "assets/scss/main";
+
+.text-error {
+  font-size: 14px;
+  color: #E8200C !important;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.info-card {
+  &__content {
+    padding: 0.9rem;
+    @include font-family-barlow;
+    border: 1px solid $primary-color;
+    border-radius: 0.5rem;
+  }
+}
+
+p {
+  @include font-family-barlow(16px);
+}

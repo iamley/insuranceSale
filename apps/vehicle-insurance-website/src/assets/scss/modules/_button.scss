@@ -1,0 +1,67 @@
+@import "libs/shared/core/src/lib/style/mixin";
+
+.entel-button-ws {
+  @include entel-button-base(16px, 600);
+  border-radius: ($border-radius-8px * 2.5);
+}
+
+.entel-button-secondary {
+  border-radius: 3rem;
+  width: 100%;
+  padding: .5rem;
+  outline: none !important;
+  color: #333333;
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid #333333;
+}
+
+.primary {
+  border: 1px solid $primary-color;
+  color: $primary-color;
+}
+
+.btn-light-gray {
+  color: #636467;
+  background-color: #E2E2E2;
+
+  &:hover {
+    background-color: #E2E2E2 !important;
+  }
+}
+
+.buttons {
+  width: 80%;
+  margin: 1rem auto;
+
+  button {
+    width: 16rem;
+
+    &:last-child {
+      float: right;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .buttons {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    button {
+      margin: 0.5rem 0;
+      width: 100%;
+    }
+
+    .btn-2 {
+      order: 2 !important;
+    }
+
+    .btn-1 {
+      order: 1 !important;
+    }
+  }
+}

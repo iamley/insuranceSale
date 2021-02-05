@@ -1,0 +1,18 @@
+<ng-template #ownerSummaryTemplate>
+  <div class="flex-fill-70">
+    <span class="title">Nombre</span>
+    <span>{{owner?.first_name}} {{owner?.first_surname}} {{owner?.second_surname}}</span>
+  </div>
+  <div class="flex-fill-30">
+    <span class="title">Rut</span>
+    <span>{{owner?.key}}</span>
+  </div>
+  <div class="flex-fill-70">
+    <span class="title">E-mail</span>
+    <span>{{owner?.email}}</span>
+  </div>
+  <div class="flex-fill-30">
+    <span class="title">Teléfono</span>
+    <span>{{owner?.phone}}</span>
+  </div>
+</ng-template>

@@ -1,0 +1,100 @@
+<div class="container">
+  <!-- Main Benner-->
+
+  <div class="row">
+    <div class="mb-4 m-lg-0 main-banner col-md-8">
+      <img class="w-100" [src]="bannerImg$ | async" alt="banner" />
+    </div>
+    <div class="col-md-4">
+      <viws-insurance-quote-form></viws-insurance-quote-form>
+    </div>
+  </div>
+  <!-- Type vehicle -->
+
+  <div class="row">
+    <h2 class="sub-title center">Precio por tipo de vehículo</h2>
+    <viws-rounded-bar>
+      <viws-rounded-bar-item
+        [icon]="item.icon"
+        [description]="item.description"
+        [price]="item.price"
+        *ngFor="let item of roundedBarItems"
+      >
+      </viws-rounded-bar-item>
+    </viws-rounded-bar>
+  </div>
+  <!-- Pay Methods -->
+
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h2 class="sub-title text-center">Elige y paga como tú quieras</h2>
+      <viws-slider-payment-methods>
+        <viws-payment-methods-item
+          [icon]="item.icon"
+          [icon2]="item.icon2"
+          [isIconTuple]="item.isIconTuple"
+          [description]="item.name"
+          *ngFor="let item of payMethods"
+        >
+        </viws-payment-methods-item>
+      </viws-slider-payment-methods>
+    </div>
+  </div>
+  <!-- Download your SOAP -->
+
+  <div class="row mt-5">
+    <div class="col-12">
+      <h2 class="sub-title text-center">Si ya contrataste tu SOAP</h2>
+      <viws-license-plate-download-form></viws-license-plate-download-form>
+    </div>
+  </div>
+  <!-- Tab group -->
+
+  <div class="row mt-2">
+    <div class="col-12 tab-group-height">
+      <viws-tab-group>
+        <viws-tab title="¿Que es el SOAP?">
+          <p class="text-content">
+            SOAP es Seguro Obligatorio de Accidentes Personales, el cual es exigido por la ley de tránsito y la CMF
+            (Comisión para el mercado Financiero) como un requisito obligatorio para transitar por las vías de nuestro
+            país. Esto da cobertura a las personas en caso de lesiones corporales o muerte por consecuencias de un
+            accidente en el que el vehículo asegurado participe.
+          </p>
+        </viws-tab>
+        <viws-tab title="Condiciones">
+          <p class="text-content">
+            El pago del presente producto se expresará en pesos chilenos, el cual se realizará durante el proceso de
+            compra. El pago con Boleta Entel estará disponible sólo para clientes suscripción con plan libre, esto es
+            exceptuando a aquellos con planes cuenta controlada o mi primer plan.
+            La emisión y asegurabilidad del cliente es total responsabilidad de la compañía SEGUROS GENERALES
+            SURAMERICANA S.A.
+          </p>
+        </viws-tab>
+        <viws-tab title="Coberturas">
+          <div class="text-content">
+            <p>Otorga protección en caso de lesiones corporales o muerte que puedan sufrir las personas en consecuencia
+              de un accidente en que intervenga el vehículo asegurado.</p>
+            <span>Entre las coberturas:</span>
+            <ul>
+              <li>Muerte</li>
+              <li>Incapacidad Permanente total</li>
+              <li>Incapacidad Permanente parcial</li>
+              <li>Gastos médicos hospitalarios</li>
+            </ul>
+          </div>
+        </viws-tab>
+      </viws-tab-group>
+    </div>
+  </div>
+  <!-- Frequently questions -->
+
+  <div class="row mt-2 mb-4 mx-1">
+    <viws-frequently-question-group [style.width]="'100%'">
+      <viws-frequently-question
+        [frequentlyQuestion]="frequentlyQuestion"
+        *ngFor="let frequentlyQuestion of frequentlyQuestions"
+      >
+      </viws-frequently-question>
+    </viws-frequently-question-group>
+  </div>
+</div>

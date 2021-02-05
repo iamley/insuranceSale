@@ -1,0 +1,20 @@
+<div class="container p-0">
+  <div class="row content">
+    <div class="col-lg-7 mb-4">
+      <viws-order-summary [licensePlateTotal]="licensePlatePrice$ | async">
+        <viws-vehicle-summary [vehicle]="licensePlateVehicle$ | async"></viws-vehicle-summary>
+        <viws-owner-summary [owner]="licensePlateOwner$ | async"></viws-owner-summary>
+      </viws-order-summary>
+    </div>
+    <div class="col-lg-5">
+      <viws-payment-methods (changePaymentMethod)="onChangePaymentMethod($event)"></viws-payment-methods>
+    </div>
+  </div>
+  <div class="buttons p-2">
+    <button type="button" class="btn-2 btn-light-gray entel-button-ws" (click)="goBack()" entelButton>Volver</button>
+    <button type="button" class="btn-1 entel-button-ws" entelButton color="warn" (click)="onSubmit()"
+            [disabled]="!isDisabledBtnPay">
+      Pagar
+    </button>
+  </div>
+</div>

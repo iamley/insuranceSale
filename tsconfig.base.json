@@ -1,0 +1,42 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@mfe-vehicle-insurance/shared/environments": [
+        "libs/shared/environments/src/index.ts"
+      ],
+      "@mfe-vehicle-insurance/shared/models": [
+        "libs/shared/models/src/index.ts"
+      ],
+      "@mfe-vehicle-insurance/shared/services": [
+        "libs/shared/services/src/index.ts"
+      ],
+      "@mfe-vehicle-insurance/shared/core/common-behaviors": [
+        "libs/shared/core/src/lib/common-behaviors"
+      ],
+      "@mfe-vehicle-insurance/ui": ["libs/ui/src/index.ts"],
+      "@mfe-vehicle-insurance/ui/input": ["libs/ui/src/lib/input"],
+      "@mfe-vehicle-insurance/ui/button": ["libs/ui/src/lib/button"],
+      "@mfe-vehicle-insurance/ui/icon": ["libs/ui/src/lib/icon"],
+      "@vehicle-insurance-website/*": [
+        "apps/vehicle-insurance-website/src/app/*"
+      ],
+      "@mfe-vehicle-insurance/utils": ["libs/utils/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

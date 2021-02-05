@@ -1,0 +1,400 @@
+{
+  "version": 1,
+  "projects": {
+    "vehicle-insurance-website": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/vehicle-insurance-website",
+      "sourceRoot": "apps/vehicle-insurance-website/src",
+      "prefix": "viws",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/vehicle-insurance-website",
+            "index": "apps/vehicle-insurance-website/src/index.html",
+            "main": "apps/vehicle-insurance-website/src/main.ts",
+            "polyfills": "apps/vehicle-insurance-website/src/polyfills.ts",
+            "tsConfig": "apps/vehicle-insurance-website/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/vehicle-insurance-website/src/favicon.ico",
+              "apps/vehicle-insurance-website/src/assets",
+              {
+                "input": "libs/shared/core/src/assets",
+                "glob": "**/*",
+                "output": "assets/icons"
+              }
+            ],
+            "styles": [
+              "apps/vehicle-insurance-website/src/styles.scss",
+              "node_modules/bootstrap/scss/bootstrap.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "libs/shared/environments/src/lib/environment.ts",
+                  "with": "libs/shared/environments/src/lib/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            },
+            "develop": {
+              "fileReplacements": [
+                {
+                  "replace": "libs/shared/environments/src/lib/environment.ts",
+                  "with": "libs/shared/environments/src/lib/environment.dev.ts"
+                }
+              ]
+            },
+            "qa": {
+              "fileReplacements": [
+                {
+                  "replace": "libs/shared/environments/src/lib/environment.ts",
+                  "with": "libs/shared/environments/src/lib/environment.qa.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "vehicle-insurance-website:build",
+            "host": "mfe-car-insurance-dev.dev.imagemaker.cl"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "vehicle-insurance-website:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "vehicle-insurance-website:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/vehicle-insurance-website/tsconfig.app.json",
+              "apps/vehicle-insurance-website/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/vehicle-insurance-website/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/vehicle-insurance-website/jest.config.js",
+            "tsConfig": "apps/vehicle-insurance-website/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/vehicle-insurance-website/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "vehicle-insurance-website-e2e": {
+      "root": "apps/vehicle-insurance-website-e2e",
+      "sourceRoot": "apps/vehicle-insurance-website-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/vehicle-insurance-website-e2e/cypress.json",
+            "tsConfig": "apps/vehicle-insurance-website-e2e/tsconfig.e2e.json",
+            "devServerTarget": "vehicle-insurance-website:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "vehicle-insurance-website:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/vehicle-insurance-website-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/vehicle-insurance-website-e2e/**/*"
+            ]
+          }
+        }
+      }
+    },
+    "shared-environments": {
+      "projectType": "library",
+      "root": "libs/shared/environments",
+      "sourceRoot": "libs/shared/environments/src",
+      "prefix": "mfe-vehicle-insurance",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/environments/tsconfig.lib.json",
+              "libs/shared/environments/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/environments/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/environments/jest.config.js",
+            "tsConfig": "libs/shared/environments/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/environments/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-models": {
+      "projectType": "library",
+      "root": "libs/shared/models",
+      "sourceRoot": "libs/shared/models/src",
+      "prefix": "mfe-vehicle-insurance",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/models/tsconfig.lib.json",
+              "libs/shared/models/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/models/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/models/jest.config.js",
+            "tsConfig": "libs/shared/models/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/models/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-services": {
+      "projectType": "library",
+      "root": "libs/shared/services",
+      "sourceRoot": "libs/shared/services/src",
+      "prefix": "mfe-vehicle-insurance",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/services/tsconfig.lib.json",
+              "libs/shared/services/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/services/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/services/jest.config.js",
+            "tsConfig": "libs/shared/services/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/services/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-core": {
+      "projectType": "library",
+      "root": "libs/shared/core",
+      "sourceRoot": "libs/shared/core/src",
+      "prefix": "mfe-vehicle-insurance",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/core/tsconfig.lib.json",
+              "libs/shared/core/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/core/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/core/jest.config.js",
+            "tsConfig": "libs/shared/core/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/core/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui": {
+      "projectType": "library",
+      "root": "libs/ui",
+      "sourceRoot": "libs/ui/src",
+      "prefix": "entel",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/tsconfig.lib.json",
+              "libs/ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/jest.config.js",
+            "tsConfig": "libs/ui/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ui/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "utils": {
+      "projectType": "library",
+      "root": "libs/utils",
+      "sourceRoot": "libs/utils/src",
+      "prefix": "mfe-vehicle-insurance",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/utils/tsconfig.lib.json",
+              "libs/utils/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/utils/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/utils/jest.config.js",
+            "tsConfig": "libs/utils/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/utils/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "vehicle-insurance-website"
+}

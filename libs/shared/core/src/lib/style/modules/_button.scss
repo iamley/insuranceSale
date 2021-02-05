@@ -1,0 +1,6 @@
+@import "../palette";
+@import "../mixin";
+
+.entel-button {
+  @include entel-button-base;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Icon/Navegacion/48px/Busqueda/blue@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M47.4171222,44.5953103 L35.8751265,33.0533143 C38.7361308,29.5652408 40.4605715,25.0973714 40.4605715,20.2277857 C40.4605715,9.05811225 31.3974592,-0.005 20.2277857,-0.005 C9.04831427,-0.005 -0.005,9.05811225 -0.005,20.2277857 C-0.005,31.3974592 9.04831427,40.4605715 20.2277857,40.4605715 C25.0973714,40.4605715 29.5554428,38.7459285 33.0435164,35.8849245 L44.5855123,47.4171222 C45.369349,48.2009593 46.6332858,48.2009593 47.4171222,47.4171222 C48.2009593,46.6430838 48.2009593,45.369349 47.4171222,44.5953103 Z M20.2277857,36.4336103 C11.282249,36.4336103 4.01216328,29.1635244 4.01216328,20.2277857 C4.01216328,11.2920469 11.282249,4.01216328 20.2277857,4.01216328 C29.1635244,4.01216328 36.4434079,11.2920469 36.4434079,20.2277857 C36.4434079,29.1635244 29.1635244,36.4336103 20.2277857,36.4336103 Z" id="path-1"></path>
+    </defs>
+    <g id="Icon/Navegacion/48px/Busqueda/blue" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="icon/letra-B/48px/Busqueda/blue" fill-rule="nonzero"></g>
+        <rect id="🎨-color" fill="#002EFF" mask="url(#mask-2)" x="0" y="0" width="48" height="48"></rect>
+    </g>
+</svg>

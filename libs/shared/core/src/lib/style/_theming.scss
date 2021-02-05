@@ -1,0 +1,26 @@
+@import "palette";
+
+.entel-primary {
+  background-color: map-get($entel-blue-primary, 500);
+}
+
+.entel-dark-primary {
+  background-color: map-get($entel-blue-primary, 900) !important;
+}
+
+.entel-accent {
+  color: black;
+  background-color: map-get($entel-green-accent, 500);
+}
+
+.entel-dark-accent {
+  background-color: map-get($entel-green-accent, 900) !important;
+}
+
+.entel-warn {
+  background-color: map-get($entel-orange-warn, 500);
+}
+
+.entel-dark-warn {
+  background-color: map-get($entel-orange-warn, 900) !important;
+}

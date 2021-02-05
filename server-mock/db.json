@@ -1,0 +1,178 @@
+{
+  "license-plates" : [
+    {
+      "key": "ABC823",
+      "owner": {
+        "key": "12345678-5",
+        "first_name": "Jhon",
+        "first_surname": "Doe",
+        "second_surname": "Doe",
+        "email": "micorre@midominio.com",
+        "phone": "9 39544126",
+        "address": {
+          "id": 1,
+          "name": "Santiago"
+        }
+      },
+      "vehicle": {
+        "make": {
+          "id": 4,
+          "name": "TOYOTA"
+        },
+        "model": {
+          "id": 1,
+          "name": "RAV4 XLE"
+        },
+        "type": {
+          "id": 2,
+          "type": "Camioneta"
+        },
+        "year": {
+          "id": 120,
+          "year": "2019"
+        },
+        "engine_number": "2BZB476514"
+      }
+    }
+  ],
+  "license-plate-price": {
+    "price": 4.895,
+    "type_vehicle": 1
+  },
+  "type-vehicles": [
+    {
+      "id": 1,
+      "type": "Automovil"
+    },
+    {
+      "id": 2,
+      "type": "Camioneta"
+    },
+    {
+      "id": 3,
+      "type": "Carrro de Arrastre"
+    },
+    {
+      "id": 4,
+      "type": "Moto"
+    },
+    {
+      "id": 5,
+      "type": "Minibus"
+    }
+  ],
+  "make-vehicles": [
+    {
+      "id": 4,
+      "type_vehicle": 2,
+      "code": "TOY",
+      "name": "TOYOTA"
+    },
+    {
+      "id": 5,
+      "type_vehicle": 2,
+      "code": "CVT",
+      "name": "CHEVROLET"
+    },
+    {
+      "id": 5,
+      "type_vehicle": 2,
+      "code": "232",
+      "name": "BMW"
+    },
+    {
+      "id": 5,
+      "type_vehicle": 1,
+      "code": "DUC",
+      "name": "DUCATI"
+    },
+    {
+      "id": 5,
+      "type_vehicle": 1,
+      "code": "NSS",
+      "name": "NISSAN"
+    }
+  ],
+  "model-vehicles": [
+    {
+      "id": 1,
+      "code": "402540",
+      "make_vehicle": 1,
+      "name": "HILUX 2.3",
+      "year": "2018"
+    },
+    {
+      "id": 1,
+      "code": "56443",
+      "make_vehicle": 4,
+      "name": "RAV4",
+      "year": "2017"
+    },
+    {
+      "id": 2,
+      "code": "131",
+      "make_vehicle": 4,
+      "name": "AYGO",
+      "year": "2017"
+    },
+    {
+      "id": 3,
+      "code": "8678",
+      "make_vehicle": 4,
+      "name": "CORROLLA",
+      "year": "2021"
+    },
+    {
+      "id": 4,
+      "code": "4354",
+      "make_vehicle": 4,
+      "name": "LAND CRUISER",
+      "year": "2018"
+    },
+    {
+      "id": 4,
+      "code": "4354",
+      "make_vehicle": 4,
+      "name": "COUPE",
+      "year": "2010"
+    },
+    {
+      "id": 5,
+      "code": "7464",
+      "make_vehicle": 5,
+      "name": "SPART GT",
+      "year": "2020"
+    },
+    {
+      "id": 6,
+      "code": "7464",
+      "make_vehicle": 5,
+      "name": "BEAT",
+      "year": "2020"
+    }
+  ],
+  "communes": [
+    {
+      "id": 1,
+      "name": "Santiago"
+    },
+    {
+      "id": 2,
+      "name": "Viña del mar"
+    }
+  ],
+  "years": [
+    {
+      "id": 122,
+      "year": "2021"
+    },
+    {
+      "id": 120,
+      "year": "2019"
+    },
+    {
+      "id": 57,
+      "year": "1956"
+    }
+  ]
+}

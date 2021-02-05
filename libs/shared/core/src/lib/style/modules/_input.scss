@@ -1,0 +1,37 @@
+@import "../palette";
+@import "../mixin";
+
+$border-1px: 1px solid $gray-color;
+
+.entel-input {
+  width: auto;
+  height: 45px;
+  padding: 0.8rem 0.6rem;
+  border: $border-1px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background: $white-color;
+
+  @include font-family-barlow(15px);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.field {
+  width: 100%;
+  padding-top: 0.9rem;
+  display: flex;
+  flex-direction: column;
+
+  @include font-family-barlow(15px);
+}
+
+select {
+  padding: 0 0.6rem !important;
+}
+
+input:read-only {
+  background-color: #EEEEEE;
+}
